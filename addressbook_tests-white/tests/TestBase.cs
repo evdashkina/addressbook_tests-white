@@ -13,14 +13,14 @@ namespace addressbook_tests_white
     {
         public ApplicationManager app;
 
-        [TestFixtureSetUP]
+        [SetUp]
 
         public void initApplication()
         {
             app = new ApplicationManager();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void stopApplication()
         {
             app.Stop();

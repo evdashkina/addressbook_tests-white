@@ -11,8 +11,7 @@ namespace addressbook_tests_white
         public void TestGroupCreation()
         {
 
-            //List<GroupData> 
-                int oldGroups = app.Groups.GetGroupList();
+           List<GroupData> oldGroups = app.Groups.GetGroupList();
 
 
             GroupData newGroup = new GroupData()
@@ -23,12 +22,12 @@ namespace addressbook_tests_white
             app.Groups.Add(newGroup);
 
 
-            //List<GroupData> 
-            int    newGroups = app.Groups.GetGroupList();
-            oldGroups = oldGroups + 1;
-            //oldGroups.Add(newGroup);
-           // oldGroups.Sort();
-           // newGroups.Sort();
+            List<GroupData> 
+            newGroups = app.Groups.GetGroupList();
+            
+            oldGroups.Add(newGroup);
+            oldGroups.Sort();
+            newGroups.Sort();
 
             Assert.AreEqual(oldGroups, newGroups);
 
